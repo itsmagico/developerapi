@@ -1,131 +1,298 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Axel Bot - O Supremo Bot de Discord</title>
+  <title>Axel Bot - Seu Bot de Confiança</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #e5e7eb;
-    }
-    ::-webkit-scrollbar-thumb {
-      background-color: #6366f1;
-      border-radius: 10px;
-    }
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans transition-colors duration-300" id="body">
-
-  <!-- Navbar -->
-  <nav class="bg-white dark:bg-gray-900 shadow sticky top-0 z-50 transition-colors duration-300">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-indigo-600 dark:text-indigo-400 text-2xl font-bold flex items-center gap-2">
-        <i class="fa-brands fa-discord"></i> Axel Bot
-      </a>
-      <button id="theme-toggle" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition">
-        <i id="theme-icon" class="fa-solid fa-eye-slash"></i>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <header class="container mx-auto px-6 py-20 text-center">
-    <img src="https://cdn.discordapp.com/avatars/1384193912859660358/649a61e6bc1488325b0c3c03d20829eb.png?size=4096"
-         alt="Axel Bot Logo"
-         class="mx-auto w-36 h-36 md:w-40 md:h-40 rounded-full border-4 border-indigo-600 dark:border-indigo-400 shadow-lg mb-6 object-cover" />
-    <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">Axel Bot</h1>
-    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-      O bot definitivo para servidores Discord. Controle, moderação e utilidade em um só lugar.
-    </p>
-    <div class="mt-8">
-      <a href="https://discord.com/oauth2/authorize?client_id=1384193912859660358&scope=bot&permissions=8"
-         class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition font-semibold">
-        Convidar Axel
-      </a>
-    </div>
-  </header>
-
-  <!-- Funcionalidades -->
-  <section id="features" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center text-indigo-700 dark:text-indigo-400 mb-12">Funcionalidades do Axel</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-        <div class="p-6 border rounded-lg hover:shadow-md transition border-gray-200 dark:border-gray-700">
-          <i class="fa-solid fa-shield-halved text-indigo-600 dark:text-indigo-400 text-5xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Moderação Avançada</h3>
-          <p class="text-gray-600 dark:text-gray-300">Modere seu servidor com a melhor moderação do discord.</p>
-        </div>
-        <div class="p-6 border rounded-lg hover:shadow-md transition border-gray-200 dark:border-gray-700">
-          <i class="fa-solid fa-coins text-indigo-600 dark:text-indigo-400 text-5xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Economia Integrada</h3>
-          <p class="text-gray-600 dark:text-gray-300">Colote suas Orbes e seja o mais rico.</p>
-        </div>
-        <div class="p-6 border rounded-lg hover:shadow-md transition border-gray-200 dark:border-gray-700">
-          <i class="fa-solid fa-toolbox text-indigo-600 dark:text-indigo-400 text-5xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Utilidades Completas</h3>
-          <p class="text-gray-600 dark:text-gray-300">Todos os comandos projetados para voce.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Suporte -->
-  <section id="support" class="py-20 bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-indigo-700 dark:text-indigo-400 mb-4">Precisa de Ajuda?</h2>
-      <p class="text-gray-600 dark:text-gray-300 mb-8">Entre no servidor oficial de suporte do Axel Bot.</p>
-      <a href="https://discord.gg/4x7e6GtM"
-         class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition font-semibold">
-        Acessar Suporte
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-indigo-950 dark:bg-black text-gray-300 py-6 transition-colors duration-300">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm">
-      <p>© 2025 AxionDevelopments | Site criado pela AxionDevelopments</p>
-      <div class="flex gap-6 text-xl mt-4 md:mt-0">
-        <a href="#" class="hover:text-indigo-400"><i class="fa-brands fa-discord"></i></a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Script de Tema -->
-  <script>
-    const themeToggle = document.getElementById("theme-toggle");
-    const icon = document.getElementById("theme-icon");
-    const html = document.documentElement;
-
-    if (!localStorage.getItem("theme")) {
-      localStorage.setItem("theme", "dark");
+    /* Reset */
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
     }
 
-    function setTheme(theme) {
-      if (theme === "dark") {
-        html.classList.add("dark");
-        icon.classList.remove("fa-eye");
-        icon.classList.add("fa-eye-slash");
-        localStorage.setItem("theme", "dark");
-      } else {
-        html.classList.remove("dark");
-        icon.classList.remove("fa-eye-slash");
-        icon.classList.add("fa-eye");
-        localStorage.setItem("theme", "light");
+    body {
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+      background-color: #fafafa;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+      padding: 18px 0;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.9rem;
+      color: #5c3aed;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo i {
+      font-size: 2.3rem;
+      color: #5c3aed;
+      filter: drop-shadow(0 0 1px #5c3aed);
+    }
+
+    main {
+      max-width: 820px;
+      width: 90%;
+      margin: 60px 0 100px;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    main img.logo-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid #5c3aed;
+      box-shadow: 0 8px 20px rgba(92, 58, 237, 0.3);
+      object-fit: cover;
+      margin-bottom: 30px;
+      transition: transform 0.4s ease;
+    }
+    main img.logo-img:hover {
+      transform: scale(1.05);
+    }
+
+    main h1 {
+      font-size: 3.4rem;
+      font-weight: 700;
+      color: #5c3aed;
+      margin-bottom: 20px;
+      letter-spacing: 0.03em;
+    }
+
+    main p {
+      font-size: 1.22rem;
+      color: #444;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #5c3aed 0%, #8046e1 100%);
+      color: white;
+      padding: 15px 40px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(92, 58, 237, 0.45);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      user-select: none;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background: linear-gradient(135deg, #6f4bf3 0%, #9359ef 100%);
+      box-shadow: 0 12px 30px rgba(115, 78, 244, 0.6);
+      outline: none;
+      transform: translateY(-3px);
+    }
+
+    section.features {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 80px;
+    }
+
+    .feature-box {
+      background: white;
+      border-radius: 15px;
+      padding: 28px 24px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      max-width: 280px;
+      flex: 1 1 280px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: default;
+    }
+    .feature-box:hover {
+      box-shadow: 0 10px 30px rgba(92, 58, 237, 0.3);
+      transform: translateY(-6px);
+    }
+
+    .feature-box i {
+      font-size: 3.8rem;
+      color: #5c3aed;
+      margin-bottom: 22px;
+      display: block;
+      filter: drop-shadow(0 0 3px #5c3aed);
+    }
+
+    .feature-box h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: #222;
+    }
+
+    .feature-box p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    section.contact {
+      background: white;
+      max-width: 820px;
+      width: 90%;
+      padding: 36px 28px;
+      border-radius: 15px;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.07);
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+
+    section.contact h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #5c3aed;
+      margin-bottom: 18px;
+    }
+
+    section.contact p {
+      font-size: 1.15rem;
+      margin-bottom: 28px;
+      color: #444;
+    }
+
+    .discord-btn {
+      background-color: #5865F2;
+      color: white;
+      padding: 16px 44px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      display: inline-block;
+      box-shadow: 0 8px 22px rgba(88, 101, 242, 0.6);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+    .discord-btn:hover,
+    .discord-btn:focus {
+      background-color: #4752c4;
+      box-shadow: 0 12px 34px rgba(71, 82, 196, 0.7);
+      outline: none;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      padding: 24px 0;
+      border-top: 1px solid #eee;
+      user-select: none;
+    }
+
+    /* Responsividade */
+    @media (max-width: 640px) {
+      main h1 {
+        font-size: 2.6rem;
+      }
+      .feature-box {
+        max-width: 100%;
       }
     }
 
-    themeToggle.addEventListener("click", () => {
-      const current = localStorage.getItem("theme");
-      setTheme(current === "dark" ? "light" : "dark");
-    });
+  </style>
+</head>
+<body>
 
-    setTheme(localStorage.getItem("theme"));
-  </script>
+  <header>
+    <a href="#" class="logo" aria-label="Logo Axel Bot"><i class="fa-brands fa-discord"></i> Axel Bot</a>
+  </header>
+
+  <main>
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/10090/10090521.png"
+      alt="Logotipo do Axel Bot"
+      class="logo-img"
+      width="160"
+      height="160"
+      loading="lazy"
+    />
+    <h1>Axel Bot</h1>
+    <p>Um bot de Discord completo para moderação, economia, utilidades e entretenimento. Leve, rápido e inteligente.</p>
+    <a
+      href="https://discord.com/oauth2/authorize?client_id=SEU_ID_AQUI&scope=bot&permissions=8"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-primary"
+      aria-label="Convidar Axel Bot para seu servidor"
+    >
+      Convidar Axel
+    </a>
+
+    <section class="features" aria-label="Funcionalidades do Axel Bot">
+      <div class="feature-box" role="region" aria-labelledby="moderação">
+        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+        <h3 id="moderação">Moderação</h3>
+        <p>Moderação e muito mais para proteger seu servidor.</p>
+      </div>
+      <div class="feature-box" role="region" aria-labelledby="economia">
+        <i class="fa-solid fa-coins" aria-hidden="true"></i>
+        <h3 id="economia">Economia</h3>
+        <p>Colete suas orbes e seja o mais rico.</p>
+      </div>
+      <div class="feature-box" role="region" aria-labelledby="utilidades">
+        <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+        <h3 id="utilidades">Utilidades</h3>
+        <p>Comandos úteis para ajudar na gestão do seu servidor.</p>
+      </div>
+    </section>
+
+    <section class="contact" aria-label="Contato">
+      <h2>Suporte</h2>
+      <p>Entre no servidor oficial do Axel para suporte ou dúvidas.</p>
+      <a
+        href="https://discord.gg/SEU-SERVIDOR"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="discord-btn"
+        aria-label="Entrar no servidor Discord Axel Bot"
+      >
+        Entrar no Discord
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Axel Bot. Todos os direitos reservados.
+  </footer>
+
 </body>
 </html>
