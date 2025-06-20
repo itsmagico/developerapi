@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Axel Bot - O Supremo Bot de Discord</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #e5e7eb;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #6366f1;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans transition-colors duration-300" id="body">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-900 shadow sticky top-0 z-50 transition-colors duration-300">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-indigo-600 dark:text-indigo-400 text-2xl font-bold flex items-center gap-2">
+        <i class="fa-brands fa-discord"></i> Axel Bot
+      </a>
+      <button id="theme-toggle" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition">
+        <i id="theme-icon" class="fa-solid fa-eye-slash"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="container mx-auto px-6 py-20 text-center">
+    <img src="https://cdn.discordapp.com/avatars/1384193912859660358/649a61e6bc1488325b0c3c03d20829eb.png?size=4096"
+         alt="Axel Bot Logo"
+         class="mx-auto w-36 h-36 md:w-40 md:h-40 rounded-full border-4 border-indigo-600 dark:border-indigo-400 shadow-lg mb-6 object-cover" />
+    <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">Axel Bot</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+      O bot definitivo para servidores Discord. Controle, moderação e utilidade em um só lugar.
+    </p>
+    <div class="mt-8">
+      <a href="https://discord.com/oauth2/authorize?client_id=1384193912859660358&scope=bot&permissions=8"
+         class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition font-semibold">
+        Convidar Axel
+      </a>
+    </div>
+  </header>
+
+  <!-- Funcionalidades -->
+  <section id="features" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-indigo-700 dark:text-indigo-400 mb-12">Funcionalidades do Axel</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+        <div class="p-6 border rounded-lg hover:shadow-md transition border-gray-200 dark:border-gray-700">
+          <i class="fa-solid fa-shield-halved text-indigo-600 dark:text-indigo-400 text-5xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Moderação Avançada</h3>
+          <p class="text-gray-600 dark:text-gray-300">Modere seu servidor com a melhor moderação do discord.</p>
+        </div>
+        <div class="p-6 border rounded-lg hover:shadow-md transition border-gray-200 dark:border-gray-700">
+          <i class="fa-solid fa-coins text-indigo-600 dark:text-indigo-400 text-5xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Economia Integrada</h3>
+          <p class="text-gray-600 dark:text-gray-300">Colote suas Orbes e seja o mais rico.</p>
+        </div>
+        <div class="p-6 border rounded-lg hover:shadow-md transition border-gray-200 dark:border-gray-700">
+          <i class="fa-solid fa-toolbox text-indigo-600 dark:text-indigo-400 text-5xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Utilidades Completas</h3>
+          <p class="text-gray-600 dark:text-gray-300">Todos os comandos projetados para voce.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Suporte -->
+  <section id="support" class="py-20 bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-indigo-700 dark:text-indigo-400 mb-4">Precisa de Ajuda?</h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-8">Entre no servidor oficial de suporte do Axel Bot.</p>
+      <a href="https://discord.gg/4x7e6GtM"
+         class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition font-semibold">
+        Acessar Suporte
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-indigo-950 dark:bg-black text-gray-300 py-6 transition-colors duration-300">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm">
+      <p>© 2025 AxionDevelopments | Site criado pela AxionDevelopments</p>
+      <div class="flex gap-6 text-xl mt-4 md:mt-0">
+        <a href="#" class="hover:text-indigo-400"><i class="fa-brands fa-discord"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script de Tema -->
+  <script>
+    const themeToggle = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+    const html = document.documentElement;
+
+    if (!localStorage.getItem("theme")) {
+      localStorage.setItem("theme", "dark");
+    }
+
+    function setTheme(theme) {
+      if (theme === "dark") {
+        html.classList.add("dark");
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+        localStorage.setItem("theme", "dark");
+      } else {
+        html.classList.remove("dark");
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+        localStorage.setItem("theme", "light");
+      }
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const current = localStorage.getItem("theme");
+      setTheme(current === "dark" ? "light" : "dark");
+    });
+
+    setTheme(localStorage.getItem("theme"));
+  </script>
+</body>
+</html>
